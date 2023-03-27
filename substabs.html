@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html class="loaded" lang="en" data-textdirection="ltr" style="--vh:11.27px;">
+    <!-- BEGIN: Head-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <title>Israel Longevity Events</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.168f785a3e57.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet" />
+        <!-- BEGIN: Vendor CSS-->
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/vendors/css/vendors.min.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/vendors/css/extensions/toastr.min.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/vendors/css/forms/select/select2.min.css" />
+        <!-- END: Vendor CSS-->
+        <!-- BEGIN: Theme CSS-->
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/bootstrap-extended.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/colors.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/components.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/themes/dark-layout.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/themes/bordered-layout.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/themes/semi-dark-layout.css" />
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/plugins/extensions/ext-component-toastr.css" />
+        <!-- BEGIN: Page CSS-->
+        <link rel="stylesheet" type="text/css" href="/files/new_design/app-assets/css/core/menu/menu-types/horizontal-menu.css" />
+        <!-- END: Page CSS-->
+        <!-- BEGIN: Custom CSS-->
+        <link rel="stylesheet" type="text/css" href="/files/new_design/assets/css/style.css" />
+        <!-- END: Custom CSS-->
+        <style type="text/css">
+            .horizontal-layout .content-body {
+                height: 100vh;
+            }
+
+            .horizontal-layout.nomenu .content-body {
+                height: 99vh;
+            }
+
+            .horizontal-layout.nomenu #main-header-menu {
+                display: none;
+            }
+
+            #main-content,
+            #main-sidebar {
+                height: 100%;
+                overflow: auto;
+            }
+
+            .app-content .bg-gradient-primary,
+            .app-content .btn-gradient-primary {
+                background-image: linear-gradient(47deg, #0b5394, #4f80c7);
+            }
+
+            .app-content .nav-pills .nav-link.active,
+            .app-content .page-item.active .page-link {
+                background-color: #0b5394;
+                border-color: #0b5394;
+                box-shadow: 0 4px 18px -4px rgba(4, 32, 58, 0.65);
+            }
+        </style>
+        <script type="text/javascript">
+            const FIELDS_LIST_SRC = ["Logo", "Event Title", "Location", "Dates", "Topic"];
+            const FIELDS_POPUP_SRC = [];
+        </script>
+    </head>
+    <!-- END: Head-->
+    <!-- BEGIN: Body-->
+    <body class="horizontal-layout horizontal-menu navbar-floating pace-done vertical-layout vertical-overlay-menu fixed-navbar menu-hide">
+        <div class="pace pace-inactive">
+            <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+                <div class="pace-progress-inner"></div>
+            </div>
+            <div class="pace-activity"></div>
+        </div>
+        <!-- BEGIN: Content-->
+        <div class="app-content content p-0">
+            <div class="content-overlay"></div>
+            <div class="content-body container-fluid pt-1">
+                <!-- IFRAME CONTENT -->
+                <div class="row" style="height: 100%;">
+                    <div id="main-content" class="col-lg-9 col-md-8">
+                        <div class="row">
+                            <div class="col-xl-8 col-sm-8 col-6">
+                                <ul class="list-inline mb-0">
+                                    <li class="list-inline-item">
+                                        <span id="companies-count" class="d-block p-75">34 results found</span>
+                                    </li>
+                                    <li id="load-spinner" class="list-inline-item align-middle d-none">
+                                        <div class="spinner-border">
+                                            <span class="sr-only">Loading...</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--
+                        <div class="col-xl-4 col-sm-4 col-6 text-right"><div class="avatar bg-light-info mr-2"><div class="avatar-content" onclick="change_show_type()"><i id="data-feather" data-feather="server" class="avatar-icon"></i></div></div><div class="btn-group"><button class="btn btn-default dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                    Sort By
+                                </button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="javascript:void(0);"
+                                       onclick="get_objects_with_sort('title')">Name</a><a class="dropdown-item" href="javascript:void(0);"
+                                       onclick="get_objects_with_sort('fund_total')">Total Funding</a><a class="dropdown-item" href="javascript:void(0);"
+                                       onclick="get_objects_with_sort('staff')">Organization Staff</a></div></div></div>
+                        -->
+                        </div>
+                        <div id="companies" class="mt-1">
+                            <div class="row match-height" id="results-list">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <table class="table table-sm table-responsive-sm">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Logo</th>
+                                                        <th scope="col">Event Title</th>
+                                                        <th scope="col">Location</th>
+                                                        <th scope="col">Dates</th>
+                                                        <th scope="col">Topic</th>
+                                                        <th scope="col"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="results-rows">
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/Longevity-Nation.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td>Longevity Nation</td>
+                                                        <td>Bar Ilan University, Ramat Gan, Israel</td>
+                                                        <td>26.03.2023 - 27.03.2023</td>
+                                                        <td>Longevity</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('0')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/LongeviTech.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td>LongeviTech TLV 2023</td>
+                                                        <td>Tel Aviv, Israel</td>
+                                                        <td>13.02.2023</td>
+                                                        <td>Longevity</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('1')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/sheba.jpeg" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td>The 1st Sheba Longevity Center Conference</td>
+                                                        <td>Sheba Medical Center, Ramat Gan, Israel</td>
+                                                        <td>10.05.2023 - 11.05.2023</td>
+                                                        <td>Longevity</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('2')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/AWS.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td>Medical IoT Roundtable at AWS</td>
+                                                        <td>Tel Aviv, Israel</td>
+                                                        <td>07.07.2019</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('3')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">5</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/uk-israel.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td> UK-Israel BIRAX Conferences on Healthy Aging </td>
+                                                        <td>Israel, virtual</td>
+                                                        <td>13.10.2020 - 14.10.2020</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('4')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">6</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/inneveg.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td>Start InNegev Pre-Incubation Program</td>
+                                                        <td>Israel</td>
+                                                        <td>2021</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('5')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">7</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/dld.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td>DLD</td>
+                                                        <td>Tel Aviv, Israel</td>
+                                                        <td>01.02.2023-0.3.02.2023</td>
+                                                        <td></td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('6')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">8</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/iiter-logo.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td> International Conference on Aging, Gerontology &amp; Geriatric Nursing (ICAGGN-23) </td>
+                                                        <td>Bat Yam, Israel</td>
+                                                        <td>30.03.2023</td>
+                                                        <td>Gerontology, Aging</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('7')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">9</th>
+                                                        <td>
+                                                            <img src="https://analytics.dkv.global/israel/events/asar.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                        </td>
+                                                        <td> International Conference On Aging, Gerontology &amp; Geriatric Nursing (ICAGGN) – ASAR </td>
+                                                        <td>Ashdod, Israel</td>
+                                                        <td>11.04.2023</td>
+                                                        <td>Gerontology, Aging</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('8')"> Details </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row match-height" id="results-pager">
+                                <div class="col-lg-12 col-md-12 col-12">
+                                    <div class="card">
+                                        <div class="card-body pb-50">
+                                            <nav>
+                                                <ul class="pagination justify-content-center mt-2" id="pagination">
+                                                    <li class="page-item active" aria-current="page" onclick="get_objects(1)">
+                                                        <a class="page-link" href="javascript:void(0);">1</a>
+                                                    </li>
+                                                    <li class="page-item" onclick="get_objects(2)">
+                                                        <a class="page-link" href="javascript:void(0);">2</a>
+                                                    </li>
+                                                    <li class="page-item" onclick="get_objects(3)">
+                                                        <a class="page-link" href="javascript:void(0);">3</a>
+                                                    </li>
+                                                    <li class="page-item" onclick="get_objects(4)">
+                                                        <a class="page-link" href="javascript:void(0);">4</a>
+                                                    </li>
+                                                    <li class="page-item" onclick="show_next_pagination()">
+                                                        <a class="page-link" href="javascript:void(0);">Next</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="main-sidebar" class="col-lg-3 col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Filters</h4>
+                                <div id="filter-1" class="custom-filter-block" data-filtercode="Topic">
+                                    <hr />
+                                    <p class="font-weight-bold">Topic</p>
+                                    <div class="position-relative">
+                                        <select class="select2 form-control select2-hidden-accessible" id="filter-1-select" onchange="get_objects(null)" multiple="" data-select2-id="filter-1-select" tabindex="-1" aria-hidden="true">
+                                            <option value="Longevity">Longevity</option>
+                                            <option value="Gerontology, Aging"> Gerontology, Aging </option>
+                                            <option value="Regenerative medcine"> Regenerative medcine </option>
+                                            <option value="Advanced Materials, Preventive Medicine"> Advanced Materials, Preventive Medicine </option>
+                                            <option value="Preventive Medicine, Healthspan"> Preventive Medicine, Healthspan </option>
+                                            <option value="Regenerative medicine, Age-related diseases"> Regenerative medicine, Age-related diseases </option>
+                                            <option value="Technology and Innovation, AgeTech "> Technology and Innovation, AgeTech </option>
+                                            <option value="Bio-convergence, P4 Medicine"> Bio-convergence, P4 Medicine </option>
+                                            <option value="Nutrition, Longevity"> Nutrition, Longevity </option>
+                                            <option value="Age-related diseases, Preventive Medicine"> Age-related diseases, Preventive Medicine </option>
+                                            <option value="Medical Device, AgeTech"> Medical Device, AgeTech </option>
+                                            <option value="P4 medicine, Regenerative Medicine"> P4 medicine, Regenerative Medicine </option>
+                                            <option value="Wearables, AgeTech "> Wearables, AgeTech </option>
+                                            <option value="Digital Health, Preventive Medicine"> Digital Health, Preventive Medicine </option>
+                                            <option value="Preventive Medicine, Aging"> Preventive Medicine, Aging </option>
+                                            <option value="Preventive Medicine, Biometrics"> Preventive Medicine, Biometrics </option>
+                                            <option value="Geroscience, Regenerative Medicine"> Geroscience, Regenerative Medicine </option>
+                                            <option value="Technology and Innovation, Preventive Medicine "> Technology and Innovation, Preventive Medicine </option>
+                                        </select>
+                                        <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;">
+                                            <span class="selection">
+                                                <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false">
+                                                    <ul class="select2-selection__rendered">
+                                                        <li class="select2-search select2-search--inline">
+                                                            <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;" />
+                                                        </li>
+                                                    </ul>
+                                                </span>
+                                            </span>
+                                            <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Content-->
+        <!-- Modal -->
+        <div class="modal fade text-left" id="company_info" tabindex="-1" role="dialog" aria-labelledby="company_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="company_title"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <ul class="list-group" id="properties"></ul>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div id="company_logo" class="mb-1"></div>
+                            <div class="mb-1" id="description"></div>
+                            <div id="company_categories"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Modal-->
+        <!-- BEGIN: Vendor JS-->
+        <script src="/files/new_design/app-assets/vendors/js/vendors.min.js"></script>
+        <!-- BEGIN Vendor JS-->
+        <!-- BEGIN: Page Vendor JS-->
+        <script src="/files/new_design/app-assets/vendors/js/ui/jquery.sticky.js"></script>
+        <!-- END: Page Vendor JS-->
+        <!-- BEGIN: Theme JS-->
+        <script src="/files/new_design/app-assets/js/core/app-menu.js"></script>
+        <script src="/files/new_design/app-assets/js/core/app.js"></script>
+        <!-- END: Theme JS-->
+        <!-- BEGIN: Page Vendor JS-->
+        <script src="/files/new_design/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+        <script src="/files/new_design/app-assets/js/scripts/forms/form-select2.js"></script>
+        <script src="/files/new_design/app-assets/vendors/js/pagination/jquery.bootpag.min.js"></script>
+        <script src="/files/new_design/app-assets/vendors/js/pagination/jquery.twbsPagination.min.js"></script>
+        <!-- END: Page Vendor JS-->
+        <script src="/files/new_design/app-assets/js/scripts/pagination/components-pagination.js"></script>
+        <!-- END: Page JS-->
+        <script src="/static/js/generic_frame_objects.02326032505e.js"></script>
+        <script>
+            $(window).on('load', function() {
+                if (feather) {
+                    feather.replace({
+                        width: 14,
+                        height: 14
+                    });
+                }
+                load_custom_objects('/files/íframes/israel_longevity_events.csv.json');
+            });
+        </script>
+        <body class="horizontal-layout horizontal-menu navbar-floating pace-done vertical-layout vertical-overlay-menu fixed-navbar menu-hide">
+            <div class="pace pace-inactive">
+                <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+                    <div class="pace-progress-inner"></div>
+                </div>
+                <div class="pace-activity"></div>
+            </div>
+            <!-- BEGIN: Content-->
+            <div class="app-content content p-0">
+                <div class="content-overlay"></div>
+                <div class="content-body container-fluid pt-1">
+                    <!-- IFRAME CONTENT -->
+                    <div class="row" style="height: 100%;">
+                        <div id="main-content" class="col-lg-9 col-md-8">
+                            <div class="row">
+                                <div class="col-xl-8 col-sm-8 col-6">
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item">
+                                            <span id="companies-count" class="d-block p-75">34 results found</span>
+                                        </li>
+                                        <li id="load-spinner" class="list-inline-item align-middle d-none">
+                                            <div class="spinner-border">
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--
+                        <div class="col-xl-4 col-sm-4 col-6 text-right"><div class="avatar bg-light-info mr-2"><div class="avatar-content" onclick="change_show_type()"><i id="data-feather" data-feather="server" class="avatar-icon"></i></div></div><div class="btn-group"><button class="btn btn-default dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                    Sort By
+                                </button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="javascript:void(0);"
+                                       onclick="get_objects_with_sort('title')">Name</a><a class="dropdown-item" href="javascript:void(0);"
+                                       onclick="get_objects_with_sort('fund_total')">Total Funding</a><a class="dropdown-item" href="javascript:void(0);"
+                                       onclick="get_objects_with_sort('staff')">Organization Staff</a></div></div></div>
+                        -->
+                            </div>
+                            <div id="companies" class="mt-1">
+                                <div class="row match-height" id="results-list">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <table class="table table-sm table-responsive-sm">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Logo</th>
+                                                            <th scope="col">Event Title</th>
+                                                            <th scope="col">Location</th>
+                                                            <th scope="col">Dates</th>
+                                                            <th scope="col">Topic</th>
+                                                            <th scope="col"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="results-rows">
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/Longevity-Nation.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td>Longevity Nation</td>
+                                                            <td>Bar Ilan University, Ramat Gan, Israel</td>
+                                                            <td>26.03.2023 - 27.03.2023</td>
+                                                            <td>Longevity</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('0')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">2</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/LongeviTech.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td>LongeviTech TLV 2023</td>
+                                                            <td>Tel Aviv, Israel</td>
+                                                            <td>13.02.2023</td>
+                                                            <td>Longevity</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('1')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/sheba.jpeg" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td>The 1st Sheba Longevity Center Conference</td>
+                                                            <td>Sheba Medical Center, Ramat Gan, Israel</td>
+                                                            <td>10.05.2023 - 11.05.2023</td>
+                                                            <td>Longevity</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('2')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">4</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/AWS.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td>Medical IoT Roundtable at AWS</td>
+                                                            <td>Tel Aviv, Israel</td>
+                                                            <td>07.07.2019</td>
+                                                            <td></td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('3')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">5</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/uk-israel.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td> UK-Israel BIRAX Conferences on Healthy Aging </td>
+                                                            <td>Israel, virtual</td>
+                                                            <td>13.10.2020 - 14.10.2020</td>
+                                                            <td></td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('4')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">6</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/inneveg.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td>Start InNegev Pre-Incubation Program</td>
+                                                            <td>Israel</td>
+                                                            <td>2021</td>
+                                                            <td></td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('5')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">7</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/dld.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td>DLD</td>
+                                                            <td>Tel Aviv, Israel</td>
+                                                            <td>01.02.2023-0.3.02.2023</td>
+                                                            <td></td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('6')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">8</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/iiter-logo.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td> International Conference on Aging, Gerontology &amp; Geriatric Nursing (ICAGGN-23) </td>
+                                                            <td>Bat Yam, Israel</td>
+                                                            <td>30.03.2023</td>
+                                                            <td>Gerontology, Aging</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('7')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">9</th>
+                                                            <td>
+                                                                <img src="https://analytics.dkv.global/israel/events/asar.png" alt="" style="max-width: 16rem;height:auto;" />
+                                                            </td>
+                                                            <td> International Conference On Aging, Gerontology &amp; Geriatric Nursing (ICAGGN) – ASAR </td>
+                                                            <td>Ashdod, Israel</td>
+                                                            <td>11.04.2023</td>
+                                                            <td>Gerontology, Aging</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-gradient-primary" data-toggle="modal" data-target="#company_info" onclick="show_company_info('8')"> Details </button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row match-height" id="results-pager">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="card">
+                                            <div class="card-body pb-50">
+                                                <nav>
+                                                    <ul class="pagination justify-content-center mt-2" id="pagination">
+                                                        <li class="page-item active" aria-current="page" onclick="get_objects(1)">
+                                                            <a class="page-link" href="javascript:void(0);">1</a>
+                                                        </li>
+                                                        <li class="page-item" onclick="get_objects(2)">
+                                                            <a class="page-link" href="javascript:void(0);">2</a>
+                                                        </li>
+                                                        <li class="page-item" onclick="get_objects(3)">
+                                                            <a class="page-link" href="javascript:void(0);">3</a>
+                                                        </li>
+                                                        <li class="page-item" onclick="get_objects(4)">
+                                                            <a class="page-link" href="javascript:void(0);">4</a>
+                                                        </li>
+                                                        <li class="page-item" onclick="show_next_pagination()">
+                                                            <a class="page-link" href="javascript:void(0);">Next</a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="main-sidebar" class="col-lg-3 col-md-4">
+                            <div class="card">
+                                <div class="tabs">
+                                  <ul class="tab-links">
+                                    <li class="active">
+                                        <a href="#upcoming-tab">Upcoming</a>
+                                    </li>
+                                    <li><a href="#past-tab">Past</a></li>
+                                    <li><a href="#ongoing-tab">Ongoing</a></li>
+                                  </ul>
+                                
+                                  <div class="tab-content">
+                                    <div id="upcoming-tab" class="tab active">
+                                      <!-- Upcoming events table here -->
+                                    </div>
+                                    <div id="past-tab" class="tab">
+                                      <!-- Past events table here -->
+                                    </div>
+                                    <div id="ongoing-tab" class="tab">
+                                      <!-- Ongoing events table here -->
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="card-body">
+                                    <h4 class="card-title">Filters</h4>
+                                    <div id="filter-1" class="custom-filter-block" data-filtercode="Topic">
+                                        <hr />
+                                        <p class="font-weight-bold">Topic</p>
+                                        <div class="position-relative">
+                                            <select class="select2 form-control select2-hidden-accessible" id="filter-1-select" onchange="get_objects(null)" multiple="" data-select2-id="filter-1-select" tabindex="-1" aria-hidden="true">
+                                            <option value="Client (InvestTechPlatform/LC/Dashboards)">Client</option>
+                                                <option value="Strategic partnership">Strategic partnership</option>
+                                                <option value="Advisor">Advisor</option>
+                                                <option value="VC/Angel association">VC/Angel association</option>
+                                                <option value="Startup">Startup</option>
+                                                <option value="E-commerce vendor">E-commerce vendor</option>
+                                                <option value="Client (InvestTech Platform/LC/Dashboards)">Client (InvestTech Platform/LC/Dashboards)</option>
+                                                <option value="Investor">Investor</option>
+                                            </select>
+                                            <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%;">
+                                                <span class="selection">
+                                                    <span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="-1" aria-disabled="false">
+                                                        <ul class="select2-selection__rendered">
+                                                            <li class="select2-search select2-search--inline">
+                                                                <input class="select2-search__field" type="search" tabindex="0" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false" role="searchbox" aria-autocomplete="list" placeholder="" style="width: 0.75em;" />
+                                                            </li>
+                                                        </ul>
+                                                    </span>
+                                                </span>
+                                                <span class="dropdown-wrapper" aria-hidden="true"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Content-->
+            <!-- Modal -->
+            <div class="modal fade text-left" id="company_info" tabindex="-1" role="dialog" aria-labelledby="company_title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="company_title"></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="list-group" id="properties"></ul>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div id="company_logo" class="mb-1"></div>
+                                <div class="mb-1" id="description"></div>
+                                <div id="company_categories"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Modal-->
+            <!-- BEGIN: Vendor JS-->
+            <script src="/files/new_design/app-assets/vendors/js/vendors.min.js"></script>
+            <!-- BEGIN Vendor JS-->
+            <!-- BEGIN: Page Vendor JS-->
+            <script src="/files/new_design/app-assets/vendors/js/ui/jquery.sticky.js"></script>
+            <!-- END: Page Vendor JS-->
+            <!-- BEGIN: Theme JS-->
+            <script src="/files/new_design/app-assets/js/core/app-menu.js"></script>
+            <script src="/files/new_design/app-assets/js/core/app.js"></script>
+            <!-- END: Theme JS-->
+            <!-- BEGIN: Page Vendor JS-->
+            <script src="/files/new_design/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+            <script src="/files/new_design/app-assets/js/scripts/forms/form-select2.js"></script>
+            <script src="/files/new_design/app-assets/vendors/js/pagination/jquery.bootpag.min.js"></script>
+            <script src="/files/new_design/app-assets/vendors/js/pagination/jquery.twbsPagination.min.js"></script>
+            <!-- END: Page Vendor JS-->
+            <script src="/files/new_design/app-assets/js/scripts/pagination/components-pagination.js"></script>
+            <!-- END: Page JS-->
+            <script src="/static/js/generic_frame_objects.02326032505e.js"></script>
+            <script>
+            $(window).on('load', function() {
+              if (feather) {
+                feather.replace({
+                  width: 14,
+                  height: 14
+                });
+              }
+              load_custom_objects(get_active_tab_json());
+            });
+            
+            function get_active_tab_json() {
+              var activeTab = $('.tabs .tab-links .active').attr('href');
+              if (activeTab == '#upcoming-tab') {
+                return '/files/íframes/.json';
+              } else if (activeTab == '#past-tab') {
+                return '/files/íframes/israel_past_events.json';
+              } else if (activeTab == '#ongoing-tab') {
+                return '/files/íframes/israel_ongoing_events.json';
+              }
+            }
+            </script>
+        </body>
+        <!-- END: Body-->
+        </html>
+    </body>
+</html>
